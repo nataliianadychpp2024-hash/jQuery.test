@@ -2,8 +2,59 @@
 <html lang="uk">
 <head>
   <script type="text/javascript" src="jquery.js"> </script>
+  <link href="jquery-ui.css" rel="stylesheet">
 </head>
 <body>
+  <h2>Accordion</h2>
+  <div id="myAccordion">
+  <h3>Розділ 1</h3>
+  <div>
+    <p>Контент першого розділу.</p>
+  </div>
+
+  <h3>Розділ 2</h3>
+  <div>
+    <p>Контент другого розділу.</p>
+  </div>
+
+  <h3>Розділ 3</h3>
+  <div>
+    <p>Контент третього розділу.</p>
+  </div>
+</div>
   
+<script> 
+  $(function() {
+  $("#myAccordion").accordion();
+});
+</script>
+  
+  <h2>Slider</h2>
+  <div id="mySlider" style="width:300px;"></div>
+<p>Значення: <span id="sliderValue">50</span></p>
+  <script>
+    $(function() {
+    $("#mySlider").slider({
+        min: 0,
+        max: 100,
+        value: 50,
+        slide: function(event, ui) {
+            $("#sliderValue").text(ui.value);
+        }
+    });
+  });
+  </script>
+  
+  <h2>Datepicker</h2>
+  <input type="text" id="myDate" placeholder="Виберіть дату">
+  <script>
+    $(function() {
+    $("#myDate").datepicker({
+        dateFormat: "dd.mm.yy"
+    });
+  });
+  </script>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>  
 </body>
 </html>
